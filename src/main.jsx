@@ -1,11 +1,10 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import Login from './login/Login.jsx';
-import Registro from './registro/Registro.jsx';
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import { initializeApp } from "firebase/app";
+import { Home } from "./pages/home/Home";
 
-createRoot(document.getElementById('root')).render(
+createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <Login />
-    {/*<Registro />  */} 
-  </StrictMode>,
-)
+    <Home></Home>
+  </StrictMode>
+);
