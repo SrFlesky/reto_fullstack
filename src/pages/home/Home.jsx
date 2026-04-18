@@ -19,8 +19,6 @@ function Home() {
         <ProductCard product={mockProducts[2]}></ProductCard>
         <ProductCard product={mockProducts[3]}></ProductCard>
       </div>
-
-      <CartDrawer items={mockProducts}></CartDrawer>
     </>
   );
 }

@@ -5,7 +5,7 @@ import { StarRating } from "../atoms/StarRating";
 export function ProductCard({ product, onAddToCart }) {
   const { title, price, category, image, rating } = product;
   return (
-    <div className="group cursor-pointer">
+    <div className="group cursor-pointer bg-white p-2">
       <div className="bg-gray-100 flex items-center justify-center h-48 sm:h-56 md:h-64 overflow-hidden">
         <img
           src={image}
