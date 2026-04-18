@@ -1,7 +1,6 @@
 import { ShoppingCart } from "lucide-react";
 
-export function Navbar({}) {
-    const onOpenCart = () => { alert("OPENING CART") }
+export function Navbar({ onOpenCart }) {
   return (
     <nav>
       {/* Logo */}

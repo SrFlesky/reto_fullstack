@@ -1,22 +1,11 @@
 import { Button } from "../atoms/Button";
-import { useState } from "react";
 
-export function CartDrawer({ items = [] }) {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const openCart = () => setIsOpen(true);
-  const closeCart = () => setIsOpen(false);
-
+export function CartDrawer({ items = [], isOpen, onClose }) {
   return (
     <div>
-      {/* Test */}
-      <Button onClick={openCart} variant={"primary"}>
-        Abrir carrito
-      </Button>
-
       {/* Overlay */}
       <div
-        onClick={closeCart}
+        onClick={onClose}
         className={`fixed inset-0 bg-black/50 z-40 transition-opacity duration-300 ${
           isOpen ? "opacity-100" : "opacity-0 pointer-events-none"
         }`}
@@ -34,7 +23,7 @@ export function CartDrawer({ items = [] }) {
             Tu carrito
           </h2>
           <button
-            onClick={closeCart}
+            onClick={onClose}
             className="text-gray-400 hover:text-black transition-colors duration-200"
           >
             X
