@@ -2,7 +2,7 @@ import { Button } from "../atoms/Button";
 import { PriceTag } from "../atoms/PriceTag";
 import { StarRating } from "../atoms/StarRating";
 
-export function ProductCard({ product }) {
+export function ProductCard({ product, onAddToCart }) {
   const { title, price, category, image, rating } = product;
   return (
     <div className="group cursor-pointer">
@@ -21,7 +21,7 @@ export function ProductCard({ product }) {
         <PriceTag price={price} />
       </div>
       <div className="block lg:opacity-0 lg:group-hover:opacity-100 lg:transition-opacity lg:duration-300">
-        <Button>
+        <Button onClick={onAddToCart}>
           <span className="text-red-500 uppercase tracking-widest text-xs sm:text-sm">
             + Add to Cart
           </span>
