@@ -1,10 +1,10 @@
-import { Home } from './pages/home/Home'
-import { CartDrawer } from './components/organisms/CartDrawer/CartDrawer'
+import Home from "./pages/home/Home"
+import { Navbar } from "./components/organisms/Navbar"
 
 export default function App() {
   return (
     <div>
-      <CartDrawer />
+      <Navbar />
       <Home />
     </div>
   )

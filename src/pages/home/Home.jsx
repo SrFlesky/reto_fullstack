@@ -7,7 +7,7 @@ import { mockProducts } from "../../mockdata/products";
 
 const calling = () => alert("Funcionando");
 
-export function Home() {
+function Home() {
   return (
     <>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 p-8">
@@ -24,3 +24,5 @@ export function Home() {
     </>
   );
 }
+
+export default Home;
