@@ -9,7 +9,7 @@ export default function App() {
 
   return (
     <div>
-      <Navbar onOpenCart={ ()=>setIsCartOpen(true)} />
+      <Navbar onOpenCart={() => setIsCartOpen(true)} />
 
       <CartDrawer
         items={items}
@@ -17,7 +17,9 @@ export default function App() {
         onClose={() => setIsCartOpen(false)}
       />
 
-      <Home />
+      <main className="min-h-screen bg-[#FDF8F4]">
+        <Home />
+      </main>
     </div>
   );
 }
