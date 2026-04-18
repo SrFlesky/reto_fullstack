@@ -1,3 +1,5 @@
+import { Children } from "react";
+
 const variantClasses = {
   primary:
     "bg-black text-white border border-black hover:bg-white hover:text-black",
@@ -19,8 +21,9 @@ export function Button({
   disabled = false,
   type = "button",
   fullWidth = false,
-  variant = "primary",
+  variant = "primary" | null,
   size = "md",
+  children,
 }) {
   return (
     <button
@@ -36,7 +39,7 @@ export function Button({
         uppercase tracking-widest font-medium
         transition-all duration-300 cursor-pointer`}
     >
-      {text}
+      {children}
     </button>
   );
 }
