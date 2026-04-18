@@ -16,11 +16,11 @@ export function ProductCard({ product }) {
 
       <div>
         <span>{category}</span>
-        <h3>{title}</h3>
+        <h3 className="line-clamp-1">{title}</h3>
         <StarRating rate={rating.rate} count={rating.count} />
         <PriceTag price={price} />
       </div>
-      <div className="mt-2 sm:mt-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+      <div className="block lg:opacity-0 lg:group-hover:opacity-100 lg:transition-opacity lg:duration-300">
         <Button>
           <span className="text-red-500 uppercase tracking-widest text-xs sm:text-sm">
             + Add to Cart
