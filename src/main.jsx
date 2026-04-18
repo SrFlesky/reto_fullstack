@@ -1,10 +1,7 @@
-import { StrictMode } from "react";
-import { createRoot } from "react-dom/client";
-import { initializeApp } from "firebase/app";
-import { Home } from "./pages/home/Home";
+import App from './App'
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <Home></Home>
+    <App />
   </StrictMode>
-);
+)
