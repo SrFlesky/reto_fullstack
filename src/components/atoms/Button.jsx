@@ -30,10 +30,10 @@ export function Button({
       type={type}
       onClick={onClick}
       disabled={disabled}
-      fullWidth={fullWidth}
       varian={variant}
       size={size}
       className={`
+        ${fullWidth ? 'w-full' : ''}
         ${variantClasses[variant]}
         ${sizeClasses[size]}
         uppercase tracking-widest font-medium
