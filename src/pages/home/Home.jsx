@@ -5,17 +5,13 @@ import { ProductCard } from "../../components/molecules/ProductCard";
 import { mockProducts } from "../../mockdata/products";
 
 const calling = () => alert("Funcionando");
-const mockTest = () => alert(mockProducts[0]);
 
 export function Home() {
   return (
-    <>
-      {/* <div className="text-red-800">HOla prueba</div> */}
-      {/* <Button text="Prueba" onClick={calling}></Button>
-      <PriceTag price={200.05}></PriceTag>
-      <StarRating rate={2} count={120} /> */}
-      {mockTest}
+    <div className="flex items-center gap-2">
       <ProductCard product={mockProducts[0]}></ProductCard>
-    </>
+      <ProductCard product={mockProducts[1]}></ProductCard>
+      <ProductCard product={mockProducts[2]}></ProductCard>
+    </div>
   );
 }

@@ -6,11 +6,11 @@ export function ProductCard({ product }) {
   const { title, price, category, image, rating } = product;
   return (
     <div className="group cursor-pointer">
-      <div className="bg-gray-100 flex items-center justify-center h-64 overflow-hidden">
+      <div className="bg-gray-100 flex items-center justify-center h-48 sm:h-56 md:h-64 overflow-hidden">
         <img
           src={image}
           alt={title}
-          className=" h-full object-contain p-6 transition-transform duration-300 group-hover:scale-105"
+          className="h-full object-contain p-4 sm:p-5 md:p-6 transition-transform duration-300 group-hover:scale-105"
         />
       </div>
 
@@ -20,8 +20,13 @@ export function ProductCard({ product }) {
         <StarRating rate={rating.rate} count={rating.count} />
         <PriceTag price={price} />
       </div>
-
-      <Button>+ Add to Cart</Button>
+      <div className="mt-2 sm:mt-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+        <Button>
+          <span className="text-red-500 uppercase tracking-widest text-xs sm:text-sm">
+            + Add to Cart
+          </span>
+        </Button>
+      </div>
     </div>
   );
 }
