@@ -1,5 +1,6 @@
 import { ShoppingCart } from "lucide-react";
 import useCartStore from "../../store/cartStore";
+import { Link } from "react-router-dom";
 
 const ORANGE = "#E8540A";
 
@@ -20,36 +21,36 @@ export function Navbar() {
       {/* Links */}
       <ul className="hidden md:flex items-center gap-8">
         <li>
-          <a
-            href="/"
+          <Link
+            to="/"
             className="text-sm uppercase tracking-widest text-gray-600 hover:text-black transition-colors duration-200 cursor-pointer"
           >
             Inicio
-          </a>
+          </Link>
         </li>
         <li>
-          <a
-            href="/shop"
+          <Link
+            to="/shop"
             className="text-sm uppercase tracking-widest text-gray-600 hover:text-black transition-colors duration-200 cursor-pointer"
           >
             Tienda
-          </a>
+          </Link>
         </li>
         <li>
-          <a
-            href="/about"
+          <Link
+            to="/about"
             className="text-sm uppercase tracking-widest text-gray-600 hover:text-black transition-colors duration-200 cursor-pointer"
           >
             Información
-          </a>
+          </Link>
         </li>
         <li>
-          <a
-            href="/contact"
+          <Link
+            to="/contact"
             className="text-sm uppercase tracking-widest text-gray-600 hover:text-black transition-colors duration-200 cursor-pointer"
           >
             Contacto
-          </a>
+          </Link>
         </li>
       </ul>
 

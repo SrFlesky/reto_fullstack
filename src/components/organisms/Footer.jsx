@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 export function Footer() {
   return (
     <footer className="bg-black text-white">
@@ -20,36 +21,36 @@ export function Footer() {
           </h3>
           <ul className="flex flex-col gap-3">
             <li>
-              <a
-                href="/"
+              <Link
+                to="/"
                 className="text-sm hover:text-gray-400 transition-colors duration-200"
               >
                 Inicio
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="/shop"
+              <Link
+                to="/shop"
                 className="text-sm hover:text-gray-400 transition-colors duration-200"
               >
                 Tienda
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="/about"
+              <Link
+                to="/about"
                 className="text-sm hover:text-gray-400 transition-colors duration-200"
               >
                 Información
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="/contact"
+              <Link
+                to="/contact"
                 className="text-sm hover:text-gray-400 transition-colors duration-200"
               >
                 Contacto
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
