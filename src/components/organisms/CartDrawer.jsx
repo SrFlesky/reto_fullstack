@@ -58,7 +58,14 @@ export function CartDrawer({ onDeleteItem }) {
         </div>
 
         {/* Precio total */}
-        <div>{getTotalPrice() === 0 ? "-" : getTotalPrice() }</div>
+        <div className="px-6 py-4 border-t border-gray-200">
+          <div className="flex items-center justify-between">
+            <span className="text-sm uppercase tracking-widest">Total</span>
+            <span className="text-sm font-medium">
+              {getTotalPrice() === 0 ? "—" : `$${getTotalPrice().toFixed(2)}`}
+            </span>
+          </div>
+        </div>
       </div>
     </div>
   );
