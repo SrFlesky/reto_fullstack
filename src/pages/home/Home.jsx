@@ -1,13 +1,12 @@
-import { Button } from "../../components/atoms/Button";
-import { PriceTag } from "../../components/atoms/PriceTag";
-import { StarRating } from "../../components/atoms/StarRating";
 import { ProductCard } from "../../components/molecules/ProductCard";
-import { CartDrawer } from "../../components/organisms/CartDrawer";
 import { mockProducts } from "../../mockdata/products";
+import useCartStore from "../../store/cartStore";
 
 const calling = () => alert("Funcionando");
 
-function Home({onAddProduct}) {
+function Home() {
+
+  const { addItem } = useCartStore()
   return (
     <>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 p-8">
@@ -15,7 +14,7 @@ function Home({onAddProduct}) {
           <ProductCard 
           key={product.id}
           product={product}
-          onAddToCart={onAddProduct}>
+          onAddToCart={addItem}>
           </ProductCard>
         ))}
         
