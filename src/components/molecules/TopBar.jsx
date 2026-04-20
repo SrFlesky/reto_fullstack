@@ -1,4 +1,4 @@
-import { Globe } from "lucide-react";
+import { Globe, ChevronDown } from "lucide-react";
 
 export function TopBar() {
   const notWorking = () => alert("En desarrollo...");
@@ -21,6 +21,7 @@ export function TopBar() {
           className="flex items-center gap-1 text-xs uppercase tracking-widest hover:text-gray-300 transition-colors duration-200 cursor-pointer"
         >
           <Globe size={14} />
+          <ChevronDown size={12}/>
         </button>
       </div>
     </div>
