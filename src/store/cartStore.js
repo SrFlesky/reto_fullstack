@@ -41,6 +41,14 @@ const useCartStore = create((set, get) => ({
       }
     }
   },
+
+  getTotalPrice: () => {
+    const { items } = get();
+
+    return items.reduce((totalPrice, item) => {
+      return totalPrice + item.price*item.quantity;
+    }, 0);
+  },
 }));
 
 export default useCartStore;

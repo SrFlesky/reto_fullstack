@@ -2,7 +2,7 @@ import useCartStore from "../../store/cartStore";
 import { Button } from "../atoms/Button";
 
 export function CartDrawer({ onDeleteItem }) {
-  const { items, isCartOpen, closeCart } = useCartStore();
+  const { items, isCartOpen, closeCart, getTotalPrice } = useCartStore();
   return (
     <div>
       {/* Overlay */}
@@ -56,6 +56,9 @@ export function CartDrawer({ onDeleteItem }) {
             </div>
           ))}
         </div>
+
+        {/* Precio total */}
+        <div>{getTotalPrice() === 0 ? "-" : getTotalPrice() }</div>
       </div>
     </div>
   );
