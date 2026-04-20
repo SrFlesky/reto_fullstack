@@ -26,7 +26,7 @@ export function CartDrawer({ onDeleteItem }) {
           </h2>
           <button
             onClick={closeCart}
-            className="text-gray-400 hover:text-black transition-colors duration-200"
+            className="text-gray-400 hover:text-black transition-colors duration-200 cursor-pointer"
           >
             X
           </button>
@@ -48,7 +48,7 @@ export function CartDrawer({ onDeleteItem }) {
                 </p>
                 <button
                   onClick={() => onDeleteItem(item)}
-                  className="text-xs text-gray-400 hover:text-red-500 transition-colors duration-200 uppercase tracking-widest self-start"
+                  className="text-xs text-gray-400 hover:text-red-500 transition-colors duration-200 uppercase tracking-widest self-start cursor-pointer"
                 >
                   Eliminar
                 </button>

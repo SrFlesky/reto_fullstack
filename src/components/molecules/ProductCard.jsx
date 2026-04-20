@@ -5,7 +5,7 @@ import { StarRating } from "../atoms/StarRating";
 export function ProductCard({ product, onAddToCart }) {
   const { title, price, category, image, rating } = product;
   return (
-    <div className="group cursor-pointer bg-white p-2">
+    <div className="group bg-white p-2">
       <div className="bg-gray-100 flex items-center justify-center h-48 sm:h-56 md:h-64 overflow-hidden">
         <img
           src={image}
@@ -20,7 +20,7 @@ export function ProductCard({ product, onAddToCart }) {
         <StarRating rate={rating.rate} count={rating.count} />
         <PriceTag price={price} />
       </div>
-      <div className="block lg:opacity-0 lg:group-hover:opacity-100 lg:transition-opacity lg:duration-300">
+      <div className="block lg:opacity-0 lg:group-hover:opacity-100 lg:transition-opacity lg:duration-300 cursor-pointer">
         <Button onClick={() => onAddToCart(product)}>
           <span className="text-red-500 uppercase tracking-widest text-xs sm:text-sm">
             + Añadir al carrito

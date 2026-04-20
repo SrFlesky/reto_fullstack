@@ -22,7 +22,7 @@ export function Navbar() {
         <li>
           <a
             href="/"
-            className="text-sm uppercase tracking-widest text-gray-600 hover:text-black transition-colors duration-200"
+            className="text-sm uppercase tracking-widest text-gray-600 hover:text-black transition-colors duration-200 cursor-pointer"
           >
             Inicio
           </a>
@@ -30,7 +30,7 @@ export function Navbar() {
         <li>
           <a
             href="/shop"
-            className="text-sm uppercase tracking-widest text-gray-600 hover:text-black transition-colors duration-200"
+            className="text-sm uppercase tracking-widest text-gray-600 hover:text-black transition-colors duration-200 cursor-pointer"
           >
             Tienda
           </a>
@@ -38,7 +38,7 @@ export function Navbar() {
         <li>
           <a
             href="/about"
-            className="text-sm uppercase tracking-widest text-gray-600 hover:text-black transition-colors duration-200"
+            className="text-sm uppercase tracking-widest text-gray-600 hover:text-black transition-colors duration-200 cursor-pointer"
           >
             Información
           </a>
@@ -46,7 +46,7 @@ export function Navbar() {
         <li>
           <a
             href="/contact"
-            className="text-sm uppercase tracking-widest text-gray-600 hover:text-black transition-colors duration-200"
+            className="text-sm uppercase tracking-widest text-gray-600 hover:text-black transition-colors duration-200 cursor-pointer"
           >
             Contacto
           </a>
@@ -56,7 +56,7 @@ export function Navbar() {
       {/* Carrito */}
       <button
         onClick={openCart}
-        className="text-gray-600 hover:text-black transition-colors duration-200"
+        className="text-gray-600 hover:text-black transition-colors duration-200 cursor-pointer"
       >
         <ShoppingCart size={20} />
       </button>
