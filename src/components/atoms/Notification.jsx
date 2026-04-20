@@ -1,8 +1,14 @@
-export function Notification({ children }) {
+import useCartStore from "../../store/cartStore";
+
+export function Notification() {
+  const { notification } = useCartStore();
+
+  if (!notification) return null;
+
   return (
     <>
       {/* Mensaje*/}
-      <div>{children}</div>
+      <div>{notification}</div>
     </>
   );
 }

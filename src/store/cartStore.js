@@ -23,6 +23,8 @@ const useCartStore = create((set, get) => ({
     } else {
       set({ items: [...items, { ...product, quantity: 1 }] });
     }
+
+    get().showNotification(`${product.title} agregado al carrito`)
   },
 
   deleteItem: (product) => {
