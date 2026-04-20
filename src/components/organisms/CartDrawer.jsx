@@ -1,20 +1,22 @@
+import useCartStore from "../../store/cartStore";
 import { Button } from "../atoms/Button";
 
-export function CartDrawer({ items = [], isOpen, onClose, onDeleteItem }) {
+export function CartDrawer({ onDeleteItem }) {
+  const { items, isCartOpen, closeCart } = useCartStore();
   return (
     <div>
       {/* Overlay */}
       <div
-        onClick={onClose}
+        onClick={closeCart}
         className={`fixed inset-0 bg-black/50 z-40 transition-opacity duration-300 ${
-          isOpen ? "opacity-100" : "opacity-0 pointer-events-none"
+          isCartOpen ? "opacity-100" : "opacity-0 pointer-events-none"
         }`}
       />
 
       {/* Drawer */}
       <div
         className={`flex flex-col fixed top-0 right-0 h-full w-full sm:w-96 bg-white z-50 transition-transform duration-300 ${
-          isOpen ? "translate-x-0" : "translate-x-full"
+          isCartOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
         {/* Header */}
@@ -23,7 +25,7 @@ export function CartDrawer({ items = [], isOpen, onClose, onDeleteItem }) {
             Tu carrito
           </h2>
           <button
-            onClick={onClose}
+            onClick={closeCart}
             className="text-gray-400 hover:text-black transition-colors duration-200"
           >
             X

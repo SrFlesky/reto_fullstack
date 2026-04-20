@@ -4,8 +4,6 @@ import { useState } from "react";
 import { CartDrawer } from "./components/organisms/CartDrawer";
 
 export default function App() {
-  const [isCartOpen, setIsCartOpen] = useState(false);
-  const [items, setItems] = useState([]);
 
   const addItem = (product) => {
     setItems((prevItems) => {
@@ -22,7 +20,7 @@ export default function App() {
       return [...prevItems, { ...product, quantity: 1 }];
     });
 
-    setIsCartOpen(true);
+    /*setIsCartOpen(true);*/
   };
 
   const deleteItem = (product) => {
@@ -48,9 +46,6 @@ export default function App() {
       <Navbar onOpenCart={() => setIsCartOpen(true)} />
 
       <CartDrawer
-        items={items}
-        isOpen={isCartOpen}
-        onClose={() => setIsCartOpen(false)}
         onDeleteItem={deleteItem}
       />
 
