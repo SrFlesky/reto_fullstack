@@ -3,6 +3,7 @@ import { create } from "zustand";
 const useCartStore = create((set, get) => ({
   items: [],
   isCartOpen: false,
+  notification: null,
 
   openCart: () => set({ isCartOpen: true }),
   closeCart: () => set({ isCartOpen: false }),
@@ -46,8 +47,13 @@ const useCartStore = create((set, get) => ({
     const { items } = get();
 
     return items.reduce((totalPrice, item) => {
-      return totalPrice + item.price*item.quantity;
+      return totalPrice + item.price * item.quantity;
     }, 0);
+  },
+
+  showNotification: (message) => {
+    set({ notification: message });
+    setTimeout(() => set({ notification: null }), 3000);
   },
 }));
 

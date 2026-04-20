@@ -1,5 +1,3 @@
-import { Children } from "react";
-
 const variantClasses = {
   primary:
     "bg-black text-white border border-black hover:bg-white hover:text-black",
