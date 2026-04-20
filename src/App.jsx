@@ -25,6 +25,24 @@ export default function App() {
     setIsCartOpen(true);
   };
 
+  const deleteItem = (product) => {
+    setItems((prevItems) => {
+      const existingItem = prevItems.find((item) => item.id === product.id);
+
+      if (existingItem) {
+        if (existingItem.quantity === 1) {
+          return prevItems.filter((item) => item.id !== product.id);
+        }
+
+        return prevItems.map((item) =>
+          item.id === product.id
+            ? { ...item, quantity: item.quantity - 1 }
+            : item
+        );
+      }
+    });
+  };
+
   return (
     <div>
       <Navbar onOpenCart={() => setIsCartOpen(true)} />
@@ -33,6 +51,7 @@ export default function App() {
         items={items}
         isOpen={isCartOpen}
         onClose={() => setIsCartOpen(false)}
+        onDeleteItem={deleteItem}
       />
 
       <main className="min-h-screen bg-[#FDF8F4]">
