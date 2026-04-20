@@ -1,6 +1,6 @@
 import { Button } from "../atoms/Button";
 
-export function CartDrawer({ items = [], isOpen, onClose }) {
+export function CartDrawer({ items = [], isOpen, onClose, onDeleteItem }) {
   return (
     <div>
       {/* Overlay */}
@@ -44,6 +44,12 @@ export function CartDrawer({ items = [], isOpen, onClose }) {
                 <p className="text-xs text-gray-400">
                   {item.quantity} x ${item.price}
                 </p>
+                <button
+                  onClick={() => onDeleteItem(item)}
+                  className="text-xs text-gray-400 hover:text-red-500 transition-colors duration-200 uppercase tracking-widest self-start"
+                >
+                  Eliminar
+                </button>
               </div>
             </div>
           ))}
