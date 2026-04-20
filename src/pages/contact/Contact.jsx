@@ -1,7 +1,7 @@
 import { Button } from "../../components/atoms/Button";
 
 export default function Contact() {
-    const notWorking = () => alert("En desarrollo...");
+  const notWorking = () => alert("En desarrollo...");
   return (
     <div>
       {/* Lado izquierdo */}
@@ -13,7 +13,7 @@ export default function Contact() {
         <div>
           <h2>Colombia</h2>
           <p>Pasto, Nariño</p>
-          <p>+57 000 000 0000</p>
+          <p>+57 322 466 3623</p>
         </div>
       </div>
 
@@ -22,7 +22,9 @@ export default function Contact() {
         <input placeholder="Nombre" />
         <input placeholder="Email" />
         <textarea placeholder="Mensaje" />
-        <Button variant={"primary"} onClick={notWorking}>Enviar mensaje</Button>
+        <Button variant={"primary"} onClick={notWorking}>
+          Enviar mensaje
+        </Button>
       </div>
     </div>
   );
