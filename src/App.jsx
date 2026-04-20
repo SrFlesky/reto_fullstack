@@ -20,7 +20,7 @@ export default function App() {
 
       <CartDrawer onDeleteItem={deleteItem} />
       <Notification />
-      <main className="min-h-screen bg-[#FDF8F4]">
+      <main className="min-h-screen bg-[#FDF8F4] pt-8">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/shop" element={<Shop />} />
