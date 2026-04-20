@@ -4,13 +4,15 @@ import useCartStore from "../../store/cartStore";
 export function Notification() {
   const { notification } = useCartStore();
   const [visible, setVisible] = useState(false);
+  const [message, setMessage] = useState("");
 
   useEffect(() => {
     if (notification) {
       setVisible(true);
+      setMessage(notification.text)
       setTimeout(() => setVisible(false), 2000);
     }
-  }, [notification]);
+  }, [notification?.id]);
 
   if (!notification) return null;
 
@@ -25,7 +27,7 @@ export function Notification() {
   bg-[#E8540A] text-white
   ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
       >
-        {notification}
+        {message}
       </div>
     </>
   );

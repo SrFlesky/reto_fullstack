@@ -24,7 +24,7 @@ const useCartStore = create((set, get) => ({
       set({ items: [...items, { ...product, quantity: 1 }] });
     }
 
-    get().showNotification(`${product.title} agregado al carrito`)
+    get().showNotification(`${product.title} agregado al carrito`);
   },
 
   deleteItem: (product) => {
@@ -54,7 +54,7 @@ const useCartStore = create((set, get) => ({
   },
 
   showNotification: (message) => {
-    set({ notification: message });
+    set({ notification: { text: message, id: Date.now() } });
     setTimeout(() => set({ notification: null }), 3000);
   },
 }));
