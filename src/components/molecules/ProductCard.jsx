@@ -21,7 +21,7 @@ export function ProductCard({ product, onAddToCart }) {
         <PriceTag price={price} />
       </div>
       <div className="block lg:opacity-0 lg:group-hover:opacity-100 lg:transition-opacity lg:duration-300">
-        <Button onClick={onAddToCart}>
+        <Button onClick={() => onAddToCart(product)}>
           <span className="text-red-500 uppercase tracking-widest text-xs sm:text-sm">
             + Add to Cart
           </span>

@@ -7,13 +7,13 @@ import { mockProducts } from "../../mockdata/products";
 
 const calling = () => alert("Funcionando");
 
-function Home() {
+function Home({onAddProduct}) {
   return (
     <>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 p-8">
         <ProductCard
           product={mockProducts[0]}
-          onAddToCart={calling}
+          onAddToCart={onAddProduct}
         ></ProductCard>
         <ProductCard product={mockProducts[1]}></ProductCard>
         <ProductCard product={mockProducts[2]}></ProductCard>

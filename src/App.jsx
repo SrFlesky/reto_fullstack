@@ -7,6 +7,24 @@ export default function App() {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [items, setItems] = useState([]);
 
+  const addItem = (product) => {
+    setItems((prevItems) => {
+      const existingItem = prevItems.find((item) => item.id === product.id);
+
+      if (existingItem) {
+        return prevItems.map((item) =>
+          item.id === product.id
+            ? { ...item, quantity: item.quantity + 1 }
+            : item
+        );
+      }
+
+      return [...prevItems, { ...product, quantity: 1 }];
+    });
+
+    setIsCartOpen(true);
+  };
+
   return (
     <div>
       <Navbar onOpenCart={() => setIsCartOpen(true)} />
@@ -18,7 +36,7 @@ export default function App() {
       />
 
       <main className="min-h-screen bg-[#FDF8F4]">
-        <Home />
+        <Home onAddProduct={addItem} />
       </main>
     </div>
   );
