@@ -1,6 +1,6 @@
 import { Button } from "../../components/atoms/Button";
 
-export default function Contact() {
+function Contact() {
   const onClick = ()=> {alert("En desarrollo...")}
   return (
     <div>
