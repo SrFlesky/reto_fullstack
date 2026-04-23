@@ -5,20 +5,15 @@ import productService from "../../services/productService";
 import { Link } from "react-router-dom";
 import hero_pic from "../../assets/hero.jpg";
 import { useState, useEffect } from "react";
-
+import useProductStore from "../../store/productStore";
 
 const calling = () => alert("Funcionando");
 
 function Home() {
-  const [products, setProducts] = useState([]);
   const { addItem } = useCartStore();
+  const { products, fetchProducts } = useProductStore();
 
   useEffect(() => {
-    const fetchProducts = async () => {
-      const data = await productService.getAll();
-      setProducts(data);
-    };
-
     fetchProducts();
   }, []);
 
