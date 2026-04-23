@@ -37,6 +37,26 @@ function Home() {
           </Link>
         </div>
       </div>
+
+       {/* Productos destacados */}
+      <div className="px-8 py-16">
+        <div className="flex items-center justify-between mb-8">
+          <h2 className="text-sm uppercase tracking-widest font-medium">Productos destacados</h2>
+          <Link to="/shop" className="text-xs uppercase tracking-widest text-gray-400 hover:text-black transition-colors duration-200">
+            Ver todos
+          </Link>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {mockProducts.slice(0, 4).map(product => (
+            <ProductCard
+              key={product.id}
+              product={product}
+              onAddToCart={() => addItem(product)}
+            />
+          ))}
+        </div>
+      </div>
     </>
   )
 }
