@@ -1,14 +1,27 @@
 import { ProductCard } from "../../components/molecules/ProductCard";
 import { mockProducts } from "../../mockdata/products";
 import useCartStore from "../../store/cartStore";
+import productService from "../../services/productService";
 import { Link } from "react-router-dom";
 import hero_pic from "../../assets/hero.jpg";
+import { useState, useEffect } from "react";
+
 
 const calling = () => alert("Funcionando");
 
 function Home() {
+  const [products, setProducts] = useState([]);
   const { addItem } = useCartStore();
-  
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      const data = await productService.getAll();
+      setProducts(data);
+    };
+
+    fetchProducts();
+  }, []);
+
   return (
     <>
       {/* Hero */}
@@ -61,7 +74,7 @@ function Home() {
 
         {/* Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {mockProducts.slice(0, 4).map((product) => (
+          {products.slice(0, 4).map((product) => (
             <ProductCard
               key={product.id}
               product={product}
