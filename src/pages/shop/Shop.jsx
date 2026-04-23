@@ -1,15 +1,26 @@
 import { ProductCard } from "../../components/molecules/ProductCard";
 import { mockProducts } from "../../mockdata/products";
 import useCartStore from "../../store/cartStore";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Search } from "lucide-react";
+import productService from "../../services/productService";
 
 const calling = () => alert("Funcionando");
 
 function Home() {
   const { addItem } = useCartStore();
   const [search, setSearch] = useState("");
-  const filteredProducts = mockProducts.filter((product) =>
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      const data = await productService.getAll();
+      setProducts(data);
+    };
+    fetchProducts();
+  }, []);
+
+  const filteredProducts = products.filter((product) =>
     product.title.toLowerCase().includes(search.toLowerCase())
   );
 
