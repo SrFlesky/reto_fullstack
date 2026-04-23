@@ -1,8 +1,10 @@
 import useCartStore from "../../store/cartStore";
 import { Button } from "../atoms/Button";
+import { useNavigate } from "react-router-dom";
 
 export function CartDrawer({ onDeleteItem }) {
   const { items, isCartOpen, closeCart, getTotalPrice } = useCartStore();
+  const navigate = useNavigate();
   return (
     <div>
       {/* Overlay */}
@@ -31,7 +33,6 @@ export function CartDrawer({ onDeleteItem }) {
             X
           </button>
         </div>
-
         {/* Lista de productos */}
         <div className="flex-1 overflow-y-auto px-6 py-4 flex flex-col gap-6">
           {items.map((item) => (
@@ -56,15 +57,24 @@ export function CartDrawer({ onDeleteItem }) {
             </div>
           ))}
         </div>
-
         {/* Precio total */}
         <div className="px-6 py-4 border-t border-gray-200">
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between mb-4">
             <span className="text-sm uppercase tracking-widest">Total</span>
             <span className="text-sm font-medium">
-              {getTotalPrice() === 0 ? "—" : `$${getTotalPrice().toFixed(2)}`}
+              ${getTotalPrice().toFixed(2)}
             </span>
           </div>
+          <Button
+            variant={"primary"}
+            onClick={() => {
+              closeCart();
+              navigate("/checkout");
+            }}
+            fullWidth
+          >
+            Checkout
+          </Button>
         </div>
       </div>
     </div>

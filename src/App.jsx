@@ -9,6 +9,7 @@ import { TopBar } from "./components/molecules/TopBar";
 import { Notification } from "./components/atoms/Notification";
 import { Footer } from "./components/organisms/Footer";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Checkout from "./pages/checkout/Checkout";
 
 export default function App() {
   const { deleteItem } = useCartStore();
@@ -26,6 +27,7 @@ export default function App() {
           <Route path="/shop" element={<Shop />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/checkout" element={<Checkout />} />
         </Routes>
       </main>
       <Footer />
