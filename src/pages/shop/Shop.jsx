@@ -4,19 +4,16 @@ import useCartStore from "../../store/cartStore";
 import { useEffect, useState } from "react";
 import { Search } from "lucide-react";
 import productService from "../../services/productService";
+import useProductStore from "../../store/productStore";
 
 const calling = () => alert("Funcionando");
 
 function Shop() {
   const { addItem } = useCartStore();
   const [search, setSearch] = useState("");
-  const [products, setProducts] = useState([]);
+  const { products, fetchProducts } = useProductStore();
 
   useEffect(() => {
-    const fetchProducts = async () => {
-      const data = await productService.getAll();
-      setProducts(data);
-    };
     fetchProducts();
   }, []);
 
