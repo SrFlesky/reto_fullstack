@@ -7,6 +7,8 @@ import hero_pic from "../../assets/hero.jpg";
 const calling = () => alert("Funcionando");
 
 function Home() {
+  const { addItem } = useCartStore();
+  
   return (
     <>
       {/* Hero */}
