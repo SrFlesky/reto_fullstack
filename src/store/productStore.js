@@ -1,4 +1,5 @@
 import { create } from "zustand";
+import productService from "../services/productService";
 
 const useProductStore = create((set, get) => ({
   products: [],
@@ -8,3 +9,5 @@ const useProductStore = create((set, get) => ({
     set({ products: data });
   },
 }));
+
+export default useProductStore;
