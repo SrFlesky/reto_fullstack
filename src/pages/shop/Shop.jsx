@@ -7,7 +7,7 @@ import productService from "../../services/productService";
 
 const calling = () => alert("Funcionando");
 
-function Home() {
+function Shop() {
   const { addItem } = useCartStore();
   const [search, setSearch] = useState("");
   const [products, setProducts] = useState([]);
@@ -55,4 +55,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Shop;
