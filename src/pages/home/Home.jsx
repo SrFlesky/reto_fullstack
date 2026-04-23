@@ -5,23 +5,19 @@ import useCartStore from "../../store/cartStore";
 const calling = () => alert("Funcionando");
 
 function Home() {
-
-  const { addItem } = useCartStore()
   return (
     <>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 p-8">
-        {mockProducts.map(product => (
-          <ProductCard 
-          key={product.id}
-          product={product}
-          onAddToCart={addItem}>
-          </ProductCard>
-        ))}
-        
-        {/* <ProductCard
-          product={mockProducts[0]}
-          onAddToCart={onAddProduct}
-        ></ProductCard> */}
+      {/* Hero */}
+      <div>
+        <div>
+          <span>Nueva colección</span>
+          <h1>Fall - Winter Collections 2025</h1>
+          <p>
+            Una tienda de moda y accesorios creada como proyecto final del curso
+            FullStack.
+          </p>
+          <button>Shop now</button>
+        </div>
       </div>
     </>
   );
