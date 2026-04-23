@@ -1,6 +1,6 @@
 const variantClasses = {
   primary:
-    "bg-black text-white border border-black hover:bg-white hover:text-black",
+    "bg-black text-white border hover:border[#E8540A] hover:bg-[#E8540A] hover:text-white",
   outline:
     "bg-white text-black border border-black hover:bg-black hover:text-white",
   ghost:
