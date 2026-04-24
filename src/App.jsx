@@ -10,12 +10,13 @@ import { Notification } from "./components/atoms/Notification";
 import { Footer } from "./components/organisms/Footer";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Checkout from "./pages/checkout/Checkout";
+import { HashRouter } from 'react-router-dom'
 
 export default function App() {
   const { deleteItem } = useCartStore();
 
   return (
-    <BrowserRouter>
+    <HashRouter>
       <TopBar />
       <Navbar />
 
@@ -31,6 +32,6 @@ export default function App() {
         </Routes>
       </main>
       <Footer />
-    </BrowserRouter>
+    </HashRouter>
   );
 }
