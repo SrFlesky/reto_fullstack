@@ -8,7 +8,7 @@ import useCartStore from "./store/cartStore";
 import { TopBar } from "./components/molecules/TopBar";
 import { Notification } from "./components/atoms/Notification";
 import { Footer } from "./components/organisms/Footer";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Checkout from "./pages/checkout/Checkout";
 import { HashRouter } from 'react-router-dom'
 

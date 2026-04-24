@@ -62,7 +62,7 @@ export function Footer() {
           </h3>
           <ul className="flex flex-col gap-3">
             <li className="text-sm">juan.montenegror@outlook.com</li>
-            <li className="text-sm">+57 322 466 3623</li>
+            <li className="text-sm">+57 300 000 0000</li>
             <li className="text-sm">Pasto, Colombia</li>
           </ul>
         </div>

@@ -4,7 +4,6 @@ import { Button } from "../../components/atoms/Button";
 
 export default function Checkout() {
   const { items, getTotalPrice } = useCartStore();
-  const navigate = useNavigate();
 
   const handlePay = () => {
     alert("Una disculpa, no hay sistema");

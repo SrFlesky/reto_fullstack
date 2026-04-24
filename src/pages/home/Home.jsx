@@ -1,10 +1,8 @@
 import { ProductCard } from "../../components/molecules/ProductCard";
-import { mockProducts } from "../../mockdata/products";
 import useCartStore from "../../store/cartStore";
-import productService from "../../services/productService";
 import { Link } from "react-router-dom";
 import hero_pic from "../../assets/hero.jpg";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import useProductStore from "../../store/productStore";
 
 const calling = () => alert("Funcionando");

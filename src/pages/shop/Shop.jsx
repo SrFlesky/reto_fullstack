@@ -1,12 +1,8 @@
 import { ProductCard } from "../../components/molecules/ProductCard";
-import { mockProducts } from "../../mockdata/products";
 import useCartStore from "../../store/cartStore";
 import { useEffect, useState } from "react";
 import { Search } from "lucide-react";
-import productService from "../../services/productService";
 import useProductStore from "../../store/productStore";
-
-const calling = () => alert("Funcionando");
 
 function Shop() {
   const { addItem } = useCartStore();

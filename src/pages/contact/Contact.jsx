@@ -1,5 +1,3 @@
-import { Button } from "../../components/atoms/Button";
-
 function Contact() {
   const onClick = ()=> {alert("En desarrollo...")}
   return (
